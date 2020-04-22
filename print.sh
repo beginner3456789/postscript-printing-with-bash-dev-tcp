@@ -24,7 +24,7 @@ exec 5<>/dev/tcp/192.168.1.111/9100 || exit 1     # change ip address as needed
  echo @PJL SET COPIES = 1           # modify environment settings
  echo @PJL SET MANUALFEED = off
  echo @PJL USTATUSOFF
- echo @PJL USTATUS TIMED = 20
+ # echo @PJL USTATUS TIMED = 20
  echo @PJL USTATUS PAGE = on
  echo @PJL ECHO "Starting PostScript Program ..."
  echo @PJL ENTER LANGUAGE = POSTSCRIPT
@@ -42,7 +42,7 @@ cat "$1"
 while read -t 122 -r LINE           # timeout is 122 seconds of silence
 do
 echo "$LINE"
-if [[ "$LINE" =~ ^@PJL\ ECHO\ BYE. ]]; then break; fi   # end
+if [[ "$LINE" =~ @PJL\ ECHO\ BYE. ]]; then break; fi   # end
 done <&5 || echo "Timeout waiting for printer."
 
 echo "Finished reading printer"
