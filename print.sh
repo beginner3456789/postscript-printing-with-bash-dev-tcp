@@ -24,7 +24,6 @@ exec 5<>/dev/tcp/192.168.1.111/9100 || exit 1     # change ip address as needed
  echo @PJL SET COPIES = 1           # modify environment settings
  echo @PJL SET MANUALFEED = off
  echo @PJL USTATUSOFF
- # echo @PJL USTATUS TIMED = 20
  echo @PJL USTATUS PAGE = on
  echo @PJL ECHO "Starting PostScript Program ..."
  echo @PJL ENTER LANGUAGE = POSTSCRIPT
