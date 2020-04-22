@@ -14,3 +14,5 @@ The script is set to timeout after 122 seconds and can be easily changed.
 
 The script will finish early if the BYE matches. That could depend on printer cr/lf issues.
 
+Use with "./print.sh test.ps" or install to /usr/local/bin and "print.sh test.ps"
+
