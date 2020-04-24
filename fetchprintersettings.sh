@@ -4,7 +4,7 @@
 #
 # requires bash built with --enable-net-redirections
 
-exec 5<>/dev/tcp/192.168.1.111/9100   # change ip address as needed
+exec 5<>/dev/tcp/192.168.1.111/9100 || exit 1  # change ip address as needed
 
 {
 echo -e "\033%-12345X@PJL"
