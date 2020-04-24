@@ -2,7 +2,7 @@
 
 # retrieve printer settings using PJL
 #
-# requires bash built with --enable-dev-redirections
+# requires bash built with --enable-net-redirections
 
 exec 5<>/dev/tcp/192.168.1.111/9100   # change ip address as needed
 
