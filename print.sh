@@ -8,7 +8,7 @@
 # bash escape is \033 or \e or \E or \x1B
 
 
-if [[ $(file -b "$1") != PostScript\ document\ text ]]; then
+if [[ $(file -b "$1" | cut -d' ' -f1) != PostScript ]]; then
   echo "need postscript file" && exit 1
   fi
 
