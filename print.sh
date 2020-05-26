@@ -34,14 +34,14 @@ cat "$1"
  echo @PJL RESET                    # unset modified environment settings
  echo @PJL ECHO BYE.
  echo -e "\033%-12345X"             # PJL universal exit
-} >&5                               # send to printer
+} >&5                               # sends to printer
 
 # now read the printer messages
 
 while read -t 122 -r LINE           # timeout is 122 seconds of silence
 do
-echo "$LINE"
-if [[ "$LINE" =~ @PJL\ ECHO\ BYE. ]]; then break; fi   # end
+  echo "$LINE"
+  if [[ "$LINE" =~ @PJL\ ECHO\ BYE. ]]; then break; fi   # end
 done <&5 || echo "Timeout waiting for printer."
 
 echo "Finished reading printer"
