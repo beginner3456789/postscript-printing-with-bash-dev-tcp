@@ -42,7 +42,7 @@ while read -t 122 -r LINE           # timeout is 122 seconds of silence
 do
   echo "$LINE"
   if [[ "$LINE" =~ @PJL\ ECHO\ BYE. ]]; then break; fi   # end
-done <&5 || echo "Timeout waiting for printer."
+done <&5
 
 echo "Finished reading printer"
 
