@@ -3,7 +3,7 @@
 #   ++++   driverless bi-directional network printing   ++++
 #   bash needs --enable-net-redirections build option
 #
-# for postscript programs with network postscript and pdf printer only
+# for pdf or postscript programs with network postscript and pdf printer only
 #
 # bash escape is \033 or \e or \E or \x1B
 
