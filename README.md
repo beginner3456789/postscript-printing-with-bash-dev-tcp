@@ -16,4 +16,4 @@ The scripts will finish early if the BYE matches. That could depend on printer c
 
 Use with "./print.sh test.ps" or install to /usr/local/bin and "print.sh test.ps"
 
-For postscript printers able to print directly from pdf files try print2.sh.
+For printers able to print directly from postscript or pdf files try print2.sh.
