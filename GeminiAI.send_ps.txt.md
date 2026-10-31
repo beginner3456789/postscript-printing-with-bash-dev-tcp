@@ -2,7 +2,7 @@
 
 > ***"write a bash script to send a postscript file to a printer 9100/tcp directly"***
 
-### Gemini AI response:
+### Gemini AI response (31 October 2026):
 
 Here is a simple and reliable Bash script to send a PostScript (`.ps`) file directly to a printer via port 9100 (AppSocket/JetDirect protocol) using `nc` (Netcat).
 
