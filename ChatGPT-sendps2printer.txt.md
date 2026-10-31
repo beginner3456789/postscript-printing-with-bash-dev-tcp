@@ -1,6 +1,6 @@
 ChatGPT prompt:
 
-"Write a bash script to send a postscript program directly to a printer without cups or lpr just to printer port 9100 directly"
+> ***"Write a bash script to send a postscript program directly to a printer without cups or lpr just to printer port 9100 directly"***
 
 Response:
 
