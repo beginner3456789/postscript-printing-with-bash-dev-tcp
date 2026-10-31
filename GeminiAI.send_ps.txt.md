@@ -61,6 +61,8 @@ chmod +x send_ps.sh
 ./send_ps.sh document.ps
 
 ```
+> **Note:** This script relies on `netcat` (`nc`), which is pre-installed on most Linux distributions and macOS. If you get a "command not found" error for `nc`, you can typically install it via your package manager (e.g., `sudo apt install netcat` on Ubuntu/Debian).
+
 
 ### Gemini AI Prompt:
 
@@ -130,5 +132,3 @@ chmod +x send_ps_devtcp.sh
 > 
 
 
-
-> **Note:** This script relies on `netcat` (`nc`), which is pre-installed on most Linux distributions and macOS. If you get a "command not found" error for `nc`, you can typically install it via your package manager (e.g., `sudo apt install netcat` on Ubuntu/Debian).
