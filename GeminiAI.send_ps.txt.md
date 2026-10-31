@@ -62,6 +62,73 @@ chmod +x send_ps.sh
 
 ```
 
+### Gemini AI Prompt:
+
+> ***"write a bash script to send a postscript file to a printer 9100/tcp with dev/tcp"***
+
+### Gemini AI Response (31 October 2026):
+
+Here is a Bash script that uses Bash's built-in `/dev/tcp` file descriptor instead of `netcat`, making it completely dependency-free on systems running Bash.
+
+### Bash Script (`send_ps_devtcp.sh`)
+
+```bash
+#!/bin/bash
+
+# Configuration
+PRINTER_IP="192.168.1.100"  # Replace with your printer's IP address
+PORT=9100
+
+# Check if a filename was provided
+if [ -z "$1" ]; then
+    echo "Usage: $0 <file.ps>"
+    exit 1
+fi
+
+FILE="$1"
+
+# Check if the file exists
+if [ ! -f "$FILE" ]; then
+    echo "Error: File '$FILE' not found!"
+    exit 1
+fi
+
+echo "Sending '$FILE' to printer at $PRINTER_IP:$PORT using /dev/tcp..."
+
+# Open the socket using bash /dev/tcp and redirect the file into it
+if timeout 5 bash -c "cat '$FILE' > /dev/tcp/$PRINTER_IP/$PORT"; then
+    echo "Successfully sent to printer."
+else
+    echo "Error: Failed to send file to printer or connection timed out."
+    exit 1
+fi
+
+```
+
+---
+
+### How to Use It
+
+1. **Save the script:** Save the code above into a file named `send_ps_devtcp.sh`.
+2. **Make it executable:** Give the script execution permissions by running:
+```bash
+chmod +x send_ps_devtcp.sh
+
+```
+
+
+3. **Update the IP:** Open the script and change `192.168.1.100` to your printer's actual IP address.
+4. **Run the script:** Pass your PostScript file as an argument:
+```bash
+./send_ps_devtcp.sh document.ps
+
+```
+
+
+
+> **Note:** This method requires **Bash** (v2.04 or newer) because `/dev/tcp` is a shell-native feature. It will not work if executed using a shell like `sh` or `dash` (the default `/bin/sh` on Ubuntu/Debian).
+> 
+
 
 
 > **Note:** This script relies on `netcat` (`nc`), which is pre-installed on most Linux distributions and macOS. If you get a "command not found" error for `nc`, you can typically install it via your package manager (e.g., `sudo apt install netcat` on Ubuntu/Debian).
