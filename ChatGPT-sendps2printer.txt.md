@@ -1,8 +1,8 @@
-ChatGPT prompt:
+### ChatGPT prompt:
 
 > ***"Write a bash script to send a postscript program directly to a printer without cups or lpr just to printer port 9100 directly"***
 
-Response:
+### ChatGPT Response:
 
 You can send PostScript directly to a network printer using Bash and `/dev/tcp`, bypassing CUPS, `lp`, and `lpr` entirely.
 
