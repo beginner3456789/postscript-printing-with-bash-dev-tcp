@@ -2,7 +2,7 @@
 
 > ***"write a bash script to send a postscript file directly to a printer port 9100/tcp"***
 
-### Response:
+### Response (31 October 2026):
 
 Here's a bash script that sends a PostScript file directly to a printer on port 9100/TCP:
 
